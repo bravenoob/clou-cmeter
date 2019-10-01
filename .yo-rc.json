@@ -1,0 +1,37 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.bd.bern.clou"
+    },
+    "jhipsterVersion": "6.3.1",
+    "applicationType": "microservice",
+    "baseName": "cmeter",
+    "packageName": "com.bd.bern.clou",
+    "packageFolder": "com/bd/bern/clou",
+    "serverPort": "8083",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "no",
+    "devDatabaseType": "no",
+    "prodDatabaseType": "no",
+    "searchEngine": false,
+    "messageBroker": "kafka",
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YWM4MzFkYjEzODY5NjVjYzA4ZGZhZDU5OTE3OTIyMTZiMGE3YjdiMjY3ZGMyZjc4Yjg3NDBiOGU2NTdiMGFkNTdkMDM5YzhjMTZlZWY2ZTZkYzg0Y2IzMGEzM2IxMzhkZTllYWNhMWE1Njg2MWEzYjY0ODRiMTY4ZWMxNjNlODA=",
+    "embeddableLaunchScript": false,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
