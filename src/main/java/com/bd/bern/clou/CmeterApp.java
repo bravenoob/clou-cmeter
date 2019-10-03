@@ -2,9 +2,7 @@ package com.bd.bern.clou;
 
 import com.bd.bern.clou.config.ApplicationProperties;
 import com.bd.bern.clou.config.DefaultProfileUtil;
-
 import io.github.jhipster.config.JHipsterConstants;
-
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +10,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.core.env.Environment;
 
 import java.net.InetAddress;
@@ -21,6 +20,7 @@ import java.util.Collection;
 
 @SpringBootApplication
 @EnableConfigurationProperties({ApplicationProperties.class})
+@EnableDiscoveryClient
 public class CmeterApp implements InitializingBean {
 
     private static final Logger log = LoggerFactory.getLogger(CmeterApp.class);
@@ -93,5 +93,12 @@ public class CmeterApp implements InitializingBean {
             serverPort,
             contextPath,
             env.getActiveProfiles());
+
+        String configServerStatus = env.getProperty("configserver.status");
+        if (configServerStatus == null) {
+            configServerStatus = "Not found or not setup for this application";
+        }
+        log.info("\n----------------------------------------------------------\n\t" +
+            "Config Server: \t{}\n----------------------------------------------------------", configServerStatus);
     }
 }

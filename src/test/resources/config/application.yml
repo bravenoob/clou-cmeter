@@ -12,6 +12,12 @@
 # Full reference is available at:
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
+eureka:
+  client:
+    enabled: false
+  instance:
+    appname: cmeter
+    instanceId: cmeter:${spring.application.instance-id:${random.value}}
 
 spring:
   application:
@@ -83,4 +89,5 @@ jhipster:
 # https://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
-# application:
+application:
+  movement-topic: test-topic
