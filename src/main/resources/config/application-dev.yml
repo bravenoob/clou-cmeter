@@ -44,14 +44,13 @@ spring:
   kafka:
     consumer:
       bootstrap-servers: localhost:9092
-      group-id: group_id
+#      group-id: group_id
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    producer:
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        schema.registry.url: "http://localhost:8081"
+        specific.avro.reader: true
   mail:
     host: localhost
     port: 25
@@ -72,7 +71,7 @@ spring:
         enabled: true
 
 server:
-  port: 8083
+  port: 8085
 
 # ===================================================================
 # JHipster specific properties
@@ -107,7 +106,7 @@ jhipster:
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
   mail: # specific JHipster mail property, for standard properties see MailProperties
-    base-url: http://127.0.0.1:8083
+    base-url: http://127.0.0.1:8085
   metrics:
     logs: # Reports metrics in the logs
       enabled: false

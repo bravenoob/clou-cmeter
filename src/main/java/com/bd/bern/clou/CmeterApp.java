@@ -11,7 +11,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.stream.schema.client.EnableSchemaRegistryClient;
 import org.springframework.core.env.Environment;
+import org.springframework.kafka.annotation.EnableKafka;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -21,6 +23,7 @@ import java.util.Collection;
 @SpringBootApplication
 @EnableConfigurationProperties({ApplicationProperties.class})
 @EnableDiscoveryClient
+@EnableSchemaRegistryClient
 public class CmeterApp implements InitializingBean {
 
     private static final Logger log = LoggerFactory.getLogger(CmeterApp.class);

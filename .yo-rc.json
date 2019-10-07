@@ -8,7 +8,7 @@
     "baseName": "cmeter",
     "packageName": "com.bd.bern.clou",
     "packageFolder": "com/bd/bern/clou",
-    "serverPort": "8083",
+    "serverPort": "8085",
     "authenticationType": "jwt",
     "cacheProvider": "hazelcast",
     "enableHibernateCache": false,
